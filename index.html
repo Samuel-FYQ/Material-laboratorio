@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samuel López Melián">
+
+    <title>Material de laboratorio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Material de laboratorio</h1>
+        </header>
+
+        <section id="game" class="card">
+            <div class="status">
+                <span id="round"></span>
+                <span id="position"></span>
+            </div>
+
+            <progress
+                id="progress"
+                max="24"
+                value="0"
+                aria-label="Preguntas completadas">
+            </progress>
+
+            <h2 id="question"></h2>
+
+            <div class="picture">
+                <canvas
+                    id="materialCanvas"
+                    width="460"
+                    height="320"
+                    role="img"
+                    aria-label="Material de laboratorio que debes identificar">
+                </canvas>
+            </div>
+
+            <div
+                id="options"
+                class="options"
+                aria-label="Opciones de respuesta">
+            </div>
+
+            <p
+                id="feedback"
+                role="status"
+                aria-live="polite">
+            </p>
+        </section>
+
+        <section id="finish" class="card" hidden>
+            <h2>¡Laboratorio completado!</h2>
+
+            <p>
+                Has identificado los 12 materiales
+                y reconocido sus funciones.
+            </p>
+
+            <form id="diplomaForm">
+                <label for="studentName">
+                    Nombre y apellidos
+                </label>
+
+                <input
+                    id="studentName"
+                    type="text"
+                    autocomplete="name"
+                    maxlength="100"
+                    placeholder="Escribe tu nombre y apellidos"
+                    required>
+
+                <button type="submit" class="primary">
+                    Descargar diploma
+                </button>
+            </form>
+
+            <p
+                id="downloadMessage"
+                role="status"
+                aria-live="polite">
+            </p>
+
+            <img
+                id="diplomaPreview"
+                alt="Tu diploma de FYQ"
+                hidden>
+
+            <button id="restart" type="button">
+                Volver a practicar
+            </button>
+        </section>
+
+        <noscript>
+            Activa JavaScript para realizar la actividad.
+        </noscript>
+    </main>
+
+    <footer>
+        © 2026 Samuel López Melián
+    </footer>
+</body>
+</html>
